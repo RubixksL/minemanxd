@@ -17,8 +17,6 @@ async def on_ready():
     print ("my current ID is: " + bot.user.id)
     await bot.change_presence(game=discord.Game(name='mineman | In Developement'), status=discord.Status('online')) 
 
-#Moderation Commands
-
 @bot.command(pass_context=True)
 async def warn(ctx, member: discord.Member):
      if ctx.message.author.server_permissions.kick_members :
@@ -80,10 +78,7 @@ async def ban(ctx, member: discord.Member):
      else:
         embed=discord.Embed(title="Permission Denied.", description=":x: You do not have permission to use this command".format(member, ctx.message.author), color=0xffff00)
         await bot.say(embed=embed)
-
-# Fun Commands and Others
-
-
+        
 @bot.command(pass_context=True)
 async def coinflip():
      await bot.say(random.choice(["Heads!", "Tails!"]))
