@@ -115,11 +115,4 @@ async def serverinfo(ctx):
 async def E8Ball():
      await bot.say(random.choice([":8ball: Maybe.", ":8ball: Certainly Not.", ":8ball: Yes.", ":8ball: My Sources Say No.", ":8ball: Outlook not so good.",":8ball: No. ",":8ball: Ask Me Later ",":8ball: I can't respond to that right now."]))
 
-@bot.command(pass_context = True)
-async def say(ctx, *args):
-    if ctx.message.author.server_permissions.manage_server :
-       mesg = ' '.join(args)
-       await bot.delete_message(ctx.message)
-       await bot.say(mesg)
-
 bot.run("NTE0NjUyNTQ0NDg4ODMzMDM3.Dtb8iA.pRMFMRpD1BPQH_GsCdutHleTdYs")
