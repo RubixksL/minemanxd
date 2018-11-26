@@ -116,39 +116,6 @@ async def serverinfo(ctx):
     embed.set_thumbnail(url=ctx.message.server.icon_url)
     await bot.say(embed=embed)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @bot.command(pass_context=True)
 async def E8Ball():
      await bot.say(random.choice([":8ball: Maybe.", ":8ball: Certainly Not.", ":8ball: Yes.", ":8ball: My Sources Say No.", ":8ball: Outlook not so good.",":8ball: No. ",":8ball: Ask Me Later ",":8ball: I can't respond to that right now."]))
