@@ -15,7 +15,7 @@ async def on_ready():
     print ("MINE DIAMONDSSSSSS!")
     print ("My Username currently is: " + bot.user.name)
     print ("my current ID is: " + bot.user.id)
-    await bot.change_presence(game=discord.Game(name='mineman | In Developement'), status=discord.Status('online')) 
+    await bot.change_presence(game=discord.Game(name='mineman | !help'), status=discord.Status('online')) 
 
 @bot.command(pass_context=True)
 async def warn(ctx, member: discord.Member):
@@ -109,6 +109,32 @@ async def serverinfo(ctx):
     embed.add_field(name="Roles", value=len(ctx.message.server.roles), inline=True)
     embed.add_field(name="Members", value=len(ctx.message.server.members))
     embed.set_thumbnail(url=ctx.message.server.icon_url)
+    await bot.say(embed=embed)
+    
+@bot.command(pass_context=True)
+async def help(ctx):
+    embed=discord.Embed(title="Help", description='''
+    Prefix: !
+    ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+    **(Moderation Commands)**
+    !warn @user - Warns a user 
+    !clearwarns @user - Clears A Users Warns.
+    !kick @user - Kicks a user from the discord.
+    !ban @user - Bans a user from the discord
+    !mute @user - Mutes a user (Disabling their ability to speak.)
+    !unmute @user - Unmutes a user.
+    --------------------------------------------------------------
+    **(Fun Commands)**
+    !E8Ball (Question) - The Magic 8-Ball Shall Answer.
+    !!coinflip - Heads Or Tails?
+    !!say - Makes the bot speak (Needs Manage Server)
+    ---------------------------------------------------------
+    **(General Commands)**
+    !ping - Pong! (x) ms!
+    !!serverinfo - Gives Info about the server
+    ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+    '''.format(ctx.message.author), color=0x00ffff)
+    embed.set_footer(text=f"Requested by {ctx.message.author}",icon_url=ctx.message.author.avatar_url)
     await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
